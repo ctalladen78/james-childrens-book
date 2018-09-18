@@ -1,3 +1,9 @@
+
+# TODO
+[ ] state management using scoped models https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7
+
+[ ] 
+
 # how to add firebase to flutter project:
 [ ] assuming flutter and firebase/firestore console project created
 [ ] console: register flutter project on both ios and android side

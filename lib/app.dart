@@ -10,7 +10,7 @@ class AppRootWidget extends StatefulWidget {
 
 class AppRootWidgetState extends State<AppRootWidget> {
   ThemeData get _themeData => new ThemeData(
-    primaryColor: Colors.cyan,
+    primaryColor: Colors.green,
     accentColor: Colors.indigo,
     scaffoldBackgroundColor: Colors.grey[300],
   );
