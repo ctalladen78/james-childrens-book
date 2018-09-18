@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:firebase_tutorial2/screens/home_screen.dart';
 
 class AuthScreen extends StatefulWidget {
   @override
@@ -20,7 +21,9 @@ class AuthScreenState extends State<AuthScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           new RaisedButton(
-            onPressed: () => print('Log in'),
+            onPressed: () {
+              Navigator.push(context, new MaterialPageRoute(builder: (context) => new HomeScreen()));
+            }, 
             color: Colors.white,
             child: new Container(
               width: 230.0,

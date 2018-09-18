@@ -21,7 +21,7 @@ class AppRootWidgetState extends State<AppRootWidget> {
       title: 'Inherited',
       theme: _themeData,
       routes: {
-        '/': (BuildContext context) => new HomeScreen(),
+        '/': (BuildContext context) => new AuthScreen(),
         '/auth': (BuildContext context) => new AuthScreen(),
       },
     );
