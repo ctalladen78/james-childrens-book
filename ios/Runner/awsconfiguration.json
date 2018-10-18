@@ -1,0 +1,41 @@
+{
+  "UserAgent": "MobileHub/1.0",
+  "Version": "1.0",
+  "CredentialsProvider": {
+    "CognitoIdentity": {
+      "Default": {
+        "PoolId": "us-east-2:7aa5737e-1b16-48a0-af3c-f946df249cde",
+        "Region": "us-east-2"
+      }
+    }
+  },
+  "IdentityManager": {
+    "Default": {}
+  },
+  "CognitoUserPool": {
+    "Default": {
+      "PoolId": "us-east-2_kZJfsg8sA",
+      "AppClientId": "6gp835iqhlckpsm3uq5u96m6nn",
+      "AppClientSecret": "qeim7romg92jr6gn402f4h6o1g1ad9nr3vkgq2ktu4da1u79nk8",
+      "Region": "us-east-2"
+    }
+  },
+  "ContentManager": {
+    "Default": {
+      "Bucket": "jameschildrensapp-hosting-mobilehub-710097545",
+      "Region": "us-east-2",
+      "CloudFrontURL": "https://d1sp386ati9ci3.cloudfront.net"
+    }
+  },
+  "PinpointAnalytics": {
+    "Default": {
+      "AppId": "914f825a39004b28bc8b929bcb7b8981",
+      "Region": "us-east-1"
+    }
+  },
+  "PinpointTargeting": {
+    "Default": {
+      "Region": "us-east-1"
+    }
+  }
+}

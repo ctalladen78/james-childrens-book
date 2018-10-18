@@ -1,0 +1,35 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "jameschildrensapp-20181014080620-authRole",
+			"UnauthRoleArn": "arn:aws:iam::545806752584:role/jameschildrensapp-20181014080620-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::545806752584:role/jameschildrensapp-20181014080620-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "jameschildrensapp-20181014080620-deployment",
+			"UnauthRoleName": "jameschildrensapp-20181014080620-unauthRole",
+			"StackName": "jameschildrensapp-20181014080620",
+			"StackId": "arn:aws:cloudformation:us-east-1:545806752584:stack/jameschildrensapp-20181014080620/489b8650-cf77-11e8-b1c6-503aca2616fd"
+		}
+	},
+	"auth": {
+		"cognito58f173ef": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/jameschildrensapp-20181014080620-deployment/amplify-cfn-templates/auth/cognito58f173ef-cloudformation-template.yml",
+				"logicalId": "authcognito58f173ef"
+			},
+			"lastPushTimeStamp": "2018-10-14T06:10:33.561Z",
+			"output": {
+				"AppClientSecret": "1dr7mono9jst861karb6hh0pvltaaj9rq8lp3mejjrabjd5ls47a",
+				"UserPoolId": "us-east-1_QWTNuB9XI",
+				"AppClientIDWeb": "5ne4t4b1v1996f8degbu0klts7",
+				"AppClientID": "288tr9l77ebbom1bmvkec178e9",
+				"IdentityPoolId": "us-east-1:3f4df4e4-d66e-4d78-9db9-f915a086ea35",
+				"IdentityPoolName": "cognito58f173ef_identitypool_58f173ef",
+				"UserPoolName": "cognito58f173ef_userpool_58f173ef"
+			},
+			"lastPushDirHash": "cv0ErWaKJ2c01dZ9mCp+4CHt1HM="
+		}
+	}
+}

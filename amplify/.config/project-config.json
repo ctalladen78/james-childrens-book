@@ -1,0 +1,11 @@
+{
+    "projectName": "jameschildrensapp",
+    "projectPath": "/Users/cytaladen/Documents/flutter-projects/james_childrens_app",
+    "defaultEditor": "code",
+    "frontendHandler": {
+        "ios": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-frontend-ios"
+    },
+    "providers": {
+        "awscloudformation": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-provider-awscloudformation"
+    }
+}

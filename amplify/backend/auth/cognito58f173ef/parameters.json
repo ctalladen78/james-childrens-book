@@ -1,0 +1,57 @@
+{
+    "identityPoolName": "cognito58f173ef_identitypool_58f173ef",
+    "allowUnauthenticatedIdentities": false,
+    "thirdPartyAuth": false,
+    "lambdaLogPolicy": "cognito58f173ef_lambda_log_policy",
+    "openIdLambdaRoleName": "cognito58f173ef_openid_lambda_role",
+    "openIdRolePolicy": "cognito58f173ef_openid_pass_role_policy",
+    "openIdLambdaIAMPolicy": "cognito58f173ef_openid_lambda_iam_policy",
+    "openIdLogPolicy": "cognito58f173ef_openid_lambda_log_policy",
+    "userPoolName": "cognito58f173ef_userpool_58f173ef",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "roleName": "cognito58f173ef_sns-role",
+    "roleExternalId": "cognito58f173ef_role_external_id",
+    "policyName": "cognito58f173ef-sns-policy",
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [
+        "Requires Lowercase",
+        "Requires Uppercase",
+        "Requires Numbers",
+        "Requires Symbols"
+    ],
+    "requiredAttributes": [
+        "email"
+    ],
+    "userpoolClientName": "cognito58f173ef_app_client",
+    "userpoolClientGenerateSecret": true,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "mfaLambdaRole": "cognito58f173ef_totp_lambda_role",
+    "mfaLambdaLogPolicy": "cognito58f173ef_totp_lambda_log_policy",
+    "mfaPassRolePolicy": "cognito58f173ef_totp_pass_role_policy",
+    "mfaLambdaIAMPolicy": "cognito58f173ef_totp_lambda_iam_policy",
+    "userpoolClientLambdaRole": "cognito58f173ef_userpoolclient_lambda_role",
+    "userpoolClientLogPolicy": "cognito58f173ef_userpoolclient_lambda_log_policy",
+    "userpoolClientLambdaPolicy": "cognito58f173ef_userpoolclient_lambda_iam_policy",
+    "userpoolClientSetAttributes": false,
+    "useDefault": "default",
+    "unAuthRoleName": "jameschildrensapp-20181014080620-unauthRole",
+    "authRoleName": "jameschildrensapp-20181014080620-authRole",
+    "unAuthRoleArn": "arn:aws:iam::545806752584:role/jameschildrensapp-20181014080620-unauthRole",
+    "authRoleArn": "arn:aws:iam::545806752584:role/jameschildrensapp-20181014080620-authRole",
+    "resourceName": "cognito58f173ef",
+    "authSelections": "identityPoolAndUserPool"
+}
