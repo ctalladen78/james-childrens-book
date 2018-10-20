@@ -20,7 +20,9 @@ dependencies:
   simple_auth: 
   meta: ^1.1.6 
   font_awesome_flutter:
-  html:
+  # html:
+  flutter_webview_plugin:
+
  
   flutter:
     sdk: flutter

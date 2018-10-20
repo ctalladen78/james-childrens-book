@@ -1,7 +1,7 @@
 import 'dart:async' show Future;
 import 'dart:convert';
-import 'package:html/parser.dart' show parse;
-import 'package:html/dom.dart';
+// import 'package:html/parser.dart' show parse;
+// import 'package:html/dom.dart';
 import 'dart:io';
 import 'package:james_childrens_app/models/book.dart' show Book;
 // import 'package:http/http.dart';
@@ -42,32 +42,37 @@ class ModelBuilder{
   }
 
   Future<List<String>> getCategoryList() async {
-    // var rawDataString = await rootBundle.loadString('assets/books.json');
-    var rawDataString = await _getBooksFromFile(); 
-    // print("DATA 2 $rawDataString");
-    Map decodedData = json.decode(rawDataString);
     List<String> catList = new List<String>();
-    // print("DATA 3 $decodedData");
+    var rawDataString = await _getBooksFromFile(); 
+    Map decodedData = json.decode(rawDataString);
+    // if(decodedData == null ){ print("false"); return catList;}
     if(decodedData is Map<String, dynamic>){
       // print("true");
     }
-    // if(decodedData == null ){ print("false"); return catList;}
     var len = decodedData["books"].length;
-    print("DATA length: $len");
-    
+    // print("DATA length: $len");
     List<dynamic> bookListRaw = decodedData["books"];
+    Set<String> catSet = new Set();
     bookListRaw.forEach((item){
-      var i = item["category"];
-      print("DATA 3 $i ");
-      catList.add(item["category"]);
+      catSet.add(item["category"]);
     });
-
+    catList = catSet.toList();
     return catList;
-
   }
 
-  Future<List<String>> getBooksByCategory(String category) async {
-    List<String> catList = new List<String>();
+  Future<List<Book>> getBooksByCategory(String category) async {
+    var rawDataString = await _getBooksFromFile(); 
+    Map decodedData = json.decode(rawDataString);
+    List<Book> catList = new List<Book>();
+    List<dynamic> bookListRaw = decodedData["books"];
+    bookListRaw.forEach((item){
+      if(item["category"] == category){
+        Book b = new Book(item["title"], item["author"], item["preview"], item["link"], item["category"]);
+        catList.add(b);
+      }
+    });
+    // print("DATA 3");
+    // print(catList.toString());
     return catList;
   }
 
@@ -94,12 +99,12 @@ class ModelBuilder{
     var response = await request.close();
     if (response.statusCode == HttpStatus.OK) {
       // TODO response is in html format not json so parse html using global parse()
-      var document = parse(response);
+      // var document = parse(response);
       // var jsonString = await response.transform(utf8.decoder).join();
       // data = json.decode(jsonString);
       // print(data[0]);
       // return data[0].toString();
-      print("html response: $document");
+      // print("html response: $document");
     } else {
       return "{}";
     }
