@@ -2,24 +2,84 @@ import 'dart:async' show Future;
 import 'dart:convert';
 // import 'package:html/parser.dart' show parse;
 // import 'package:html/dom.dart';
+// import 'package:http/http.dart';
+import 'package:mongo_dart/mongo_dart.dart';
+import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:james_childrens_app/models/book.dart' show Book;
-// import 'package:http/http.dart';
-// import 'underscore';
-
+import 'package:james_childrens_app/models/user.dart' show User;
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:james_childrens_app/services/db_service.dart';
+import 'package:scoped_model/scoped_model.dart' as scopedModel;
+import 'package:james_childrens_app/services/login_service.dart';
+
+ class CustomBookListModel extends scopedModel.Model {
+  DatabaseService _dataBaseService = new DatabaseService();
+  // TODO get custom boooks from DB
+  
+  // TODO return list of custom books from DB
+}
+
+class AppModel extends scopedModel.Model with CustomBookListModel{
+}
 
 class ModelBuilder{
-  static Future<String> getClientId() async {
-    var res = await rootBundle.loadString('assets/config.json');
-    Map cid = jsonDecode(res);
-    return cid["clientID"];
+  DatabaseService _dataBaseService;
+  ModelBuilder(){}
+
+  void createBook() async {
+
+    // TODO save image to mongo db
+    // get mongodb uri , save to objectDB
+    // setup form to have user input title, book body
+
   }
 
-  static Future<String> getClientSecret() async {
-    var res = await rootBundle.loadString('assets/config.json');
-    Map cid = jsonDecode(res);
-    return cid["clientSecret"];
+  Future<List<Book>> getCustomBook() async {
+    _dataBaseService = new DatabaseService();
+    List<Map<dynamic, dynamic>> rawBooks;
+    List<Book> list = new List<Book>();
+    String category = "custom";
+    // rawBooks = await _dataBaseService.getCustomBookFromDb(category);
+    // for(var item in rawBooks){
+    //  print($item);
+    // }
+    return list;
+  }
+
+  void uploadImageToMongo() {
+    _dataBaseService = new DatabaseService();
+    // save path to local db
+    _dataBaseService.saveImagePath();
+  }
+
+  void saveProfile(Map<String, dynamic> user){
+    _dataBaseService = new DatabaseService();
+    _dataBaseService.saveProfile(user);
+  }
+  
+  // get only the user that is logged on
+  Future<User> getUserProfile() async {
+    _dataBaseService = new DatabaseService();
+    bool isCurrentUser = true;
+    Map<dynamic, dynamic> u = await _dataBaseService.getUserFromDB(isCurrentUser);
+    // _dataBaseService.deleteAll();
+    // User user = new User(u["name"], u["profile"], u["email"], u["image"], u["editlink"]);
+    // var userJson = json.decode(u.toString());
+    User user = User.fromJson(u);
+    // print("USER MODEL : ${user.email}");
+    // print("USER MODEL PARSED : $user");
+    String email = user.email;
+        String link = user.link;
+    String name = user.name;
+    String picture = user.picture;
+    print("USER MODEL EMAIL $email PICTURE $picture NAME $name LINK $link");
+    return user;
+  }
+
+  void deleteAll() async {
+    _dataBaseService = new DatabaseService();
+    _dataBaseService.deleteAll();
   }
 
 // TODO use objectdb to build  prototype , production will use cloud backend as a service
@@ -109,4 +169,6 @@ class ModelBuilder{
       return "{}";
     }
   }
+
+  
 }

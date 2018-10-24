@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:james_childrens_app/book_grid_screen.dart';
-
+import 'package:james_childrens_app/new_book_form.dart';
+import 'package:james_childrens_app/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -32,7 +33,7 @@ class HomePageState extends State<HomeScreen>{
           ),
           new BottomNavigationBarItem(
             icon: new Icon(Icons.add),
-            title: new Text('Profile'),
+            title: new Text('Book'),
           ),
           new BottomNavigationBarItem(
             icon: new Icon(Icons.person),
@@ -51,6 +52,8 @@ class HomePageState extends State<HomeScreen>{
         onPageChanged: (index) => setState(() => _selectedIndex = index),
         children: <Widget>[
           new BookGridScreen(),
+          new BookCreateScreen(),
+          new ProfileScreen()
         ],
       ),
       bottomNavigationBar: _buildFooter(), 

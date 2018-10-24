@@ -264,21 +264,56 @@
             "author" : "Walt Disney",
             "preview" : "http://www.childrenslibrary.org/library/books/b/bermagi_00900137/thumbs2/bermagi_00900137-0001-thumb3.jpg",
             "link" : "http://www.childrenslibrary.org/icdl/BookPreview?bookid=megschn_00550020&route=text_English&lang=English&msg=&ilang=English",
-            "category": "fables"
+            "category": "recent"
         },
         {
             "title" : "Serbian Folk Fairy Tales",
             "author" : "the author",
             "preview" : "http://www.childrenslibrary.org/library/books/w/wiltale_00940020/thumbs2/wiltale_00940020-0001-thumb3.jpg",
             "link" : "http://www.childrenslibrary.org/icdl/BookPreview?bookid=brajapa_00550023&route=text_English&lang=English&msg=&ilang=English",
-            "category": "fables"
+            "category": "recent"
         },
         {
             "title" : "Grimms Fairy Tales",
             "author" : "Brothers Grimm",
             "preview" : "http://www.childrenslibrary.org/library/books/t/tplsgrf_00070002/thumbs2/tplsgrf_00070002-0007-thumb3.jpg",
             "link" : "http://www.childrenslibrary.org/icdl/BookPreview?bookid=hofprin_00550006&route=text_English&lang=English&msg=&ilang=English",
-            "category": "fables"
+            "category": "recent"
+        },
+        {
+            "title" : "Grimms Fairy Tales",
+            "author" : "Brothers Grimm",
+            "preview" : "http://www.childrenslibrary.org/library/books/t/tplsgrf_00070002/thumbs2/tplsgrf_00070002-0007-thumb3.jpg",
+            "link" : "http://www.childrenslibrary.org/icdl/BookPreview?bookid=hofprin_00550006&route=text_English&lang=English&msg=&ilang=English",
+            "category": "recent"
+        },
+        {
+            "title" : "Charlottes Web",
+            "author" : "the author",
+            "preview" : "http://www.childrenslibrary.org/library/books/b/brajapa_00550023/thumbs2/brajapa_00550023-0001-thumb3.jpg",
+            "link" : "http://www.childrenslibrary.org/icdl/BookPreview?bookid=srpskeb_00380059&route=text_English&lang=English&msg=&ilang=English",
+            "category": "recent"
+        },
+        {
+            "title" : "Snow White",
+            "author" : "Walt Disney",
+            "preview" : "http://www.childrenslibrary.org/library/books/b/bermagi_00900137/thumbs2/bermagi_00900137-0001-thumb3.jpg",
+            "link" : "http://www.childrenslibrary.org/icdl/BookPreview?bookid=megschn_00550020&route=text_English&lang=English&msg=&ilang=English",
+            "category": "recent"
+        },
+        {
+            "title" : "Serbian Folk Fairy Tales",
+            "author" : "the author",
+            "preview" : "http://www.childrenslibrary.org/library/books/w/wiltale_00940020/thumbs2/wiltale_00940020-0001-thumb3.jpg",
+            "link" : "http://www.childrenslibrary.org/icdl/BookPreview?bookid=brajapa_00550023&route=text_English&lang=English&msg=&ilang=English",
+            "category": "recent"
+        },
+        {
+            "title" : "Grimms Fairy Tales",
+            "author" : "Brothers Grimm",
+            "preview" : "http://www.childrenslibrary.org/library/books/t/tplsgrf_00070002/thumbs2/tplsgrf_00070002-0007-thumb3.jpg",
+            "link" : "http://www.childrenslibrary.org/icdl/BookPreview?bookid=hofprin_00550006&route=text_English&lang=English&msg=&ilang=English",
+            "category": "recent"
         }
     ]
 }

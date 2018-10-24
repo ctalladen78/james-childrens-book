@@ -4,9 +4,10 @@ import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 const kAndroidUserAgent =
     'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Mobile Safari/537.36';
-const kwidowsUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246";
+const kwindowsUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246";
 
 const macUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36";
+
 class WebView {
   FlutterWebviewPlugin flutterWebviewPlugin;
   WebviewScaffold _view;
@@ -25,8 +26,7 @@ class WebView {
                             );
   }
 
-  Widget launchWithUserAgent(BuildContext context) {
-    String link = "http://www.childrenslibrary.org/icdl/BookPreview?bookid=brajapa_00550023&route=text_English&lang=English&msg=&ilang=English";
+  Widget launchWithUserAgent(BuildContext context, String link) {
     flutterWebviewPlugin.launch(link,
                   rect: new Rect.fromLTWH(
                       0.0, 0.0, MediaQuery.of(context).size.width, MediaQuery.of(context).size.height),

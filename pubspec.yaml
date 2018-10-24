@@ -13,15 +13,21 @@ environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
 
 dependencies:
-  http: ^0.11.0
+  http: ^0.11.0 # httpClient
   scoped_model: ^0.3.0
   objectdb: ^1.0.5
   simple_auth_flutter: 
   simple_auth: 
   meta: ^1.1.6 
   font_awesome_flutter:
-  # html:
+  # html: # html document parser
   flutter_webview_plugin:
+  aws_client: ^0.1.2
+  mongo_dart: ^0.3.3
+  shared_preferences:
+  image_picker: 
+  path_provider:
+  url_launcher:
 
  
   flutter:

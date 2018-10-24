@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:james_childrens_app/services/login_service.dart' ;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:james_childrens_app/services/db_service.dart';
+import 'package:james_childrens_app/services/model_builder.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -11,6 +13,7 @@ class LoginPageState extends State<LoginScreen> with SingleTickerProviderStateMi
   Animation<double> _iconAnimation;
   AnimationController _iconAnimationController;
   LoginService _login;
+  ModelBuilder _modelBuilder;
 
   @override
   void initState() {
@@ -24,10 +27,17 @@ class LoginPageState extends State<LoginScreen> with SingleTickerProviderStateMi
     _iconAnimation.addListener(() => this.setState(() {}));
     _iconAnimationController.forward();
     _login = new LoginService(context);
+        _modelBuilder = new ModelBuilder();
+
   }
 
   _initLogin(){
-    _login.getUserProfile().then((data){ if(data){
+    _login.googleLogin().then((data) async { if(data){
+      print("USER is verified: $data");
+      // TODO save user information 
+      // TODO use user information and pass into profile screen
+      Map<String, dynamic> user = await _login.getUserProfile();
+      _modelBuilder.saveProfile(user);
       Navigator.pushReplacementNamed(context, "/home_screen");
     }});
   }

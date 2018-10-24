@@ -4,7 +4,7 @@ import 'dart:async' show Future;
 import 'dart:convert';
 import "package:simple_auth/simple_auth.dart" as simpleAuth;
 import 'package:simple_auth_flutter/simple_auth_flutter.dart';
-
+import 'package:james_childrens_app/keys.dart';
 
 class LoginService {
   simpleAuth.GoogleApi googleApi;
@@ -22,7 +22,7 @@ class LoginService {
 // https://developers.google.com/identity/protocols/OAuth2UserAgent#validate-access-token
   void _init() {
     googleApi = new simpleAuth.GoogleApi("google",
-        "597309653078-8u2gpe69auor8fa6ao8e4bpg730las7m.apps.googleusercontent.com",
+        CLIENT_ID,
         clientSecret: "",
         scopes: [
           "https://www.googleapis.com/auth/userinfo.email",
@@ -36,18 +36,27 @@ class LoginService {
       */
   }
 
-  Future<bool> getUserProfile() async {
-    googleApi.getUserProfile().then((data){
+  Future<Map<String, dynamic>> getUserProfile() async {
+    return googleApi.getUserProfile().then((data){
       // print(data.toJson());
-      // var jsonData = data.toJson();
-      // print(jsonData["id"]);
+      var jsonData = data.toJson();
+      // print(jsonData);
+      return jsonData;
     });
-    googleApi.authenticate().then((data){
-      var json = data.toJson();
-      // print("Oauth data: $json");
-    });
+    // googleApi.authenticate().then((data){
+    //   var json = data.toJson();
+    //   // print("Oauth data: $json");
+    // });
+  }
+  
+  Future<bool> googleLogin() async {
     var isValid = await googleApi.verifyCredentials();  
     if(!isValid) {return false;}
     return true;
+  }
+
+  Future<bool> googleLogout() async {
+    var logout = await googleApi.logOut();
+    return logout;
   }
 }
